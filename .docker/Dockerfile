@@ -1,10 +1,13 @@
-# Use a Python base image
+# Use uma imagem Python base
 FROM python:3.9-slim
 
-# Atualize o pip e instale dependências necessárias
+# Atualize o pip e instale as ferramentas necessárias
+RUN apt-get update && apt-get install -y gcc g++ build-essential
+
+# Atualize o pip, setuptools e wheel
 RUN pip install --upgrade pip setuptools wheel
 
-# Instalar spaCy com extras para transformers e lookups, além do pacote para M1
+# Instale spaCy com os extras transformers, lookups e suporte para Apple
 RUN pip install 'spacy[transformers,lookups,apple]'
 
 # Baixar os modelos de linguagem
