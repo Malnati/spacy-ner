@@ -20,8 +20,8 @@ RUN python -m spacy download en_core_web_trf && \
 # Definir o diretório de trabalho
 WORKDIR /usr/src/app
 
-# Copiar os arquivos da aplicação (se houver)
-COPY . .
+# Copiar apenas os arquivos da pasta src para o diretório de trabalho no container
+COPY ../src /usr/src/app/src
 
 # Comando padrão ao iniciar o container
 CMD ["python3"]
