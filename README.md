@@ -1,1 +1,1 @@
-# space-ner
+# spacy-ner
