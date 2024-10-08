@@ -1,5 +1,13 @@
 # spacy-ner
 
+[![Build Status](https://img.shields.io/github/actions/workflow/status/SEU-USUARIO/spacy-ner/build.yml?branch=main)](https://github.com/SEU-USUARIO/spacy-ner/actions)
+[![Docker Pulls](https://img.shields.io/docker/pulls/SEU_USUARIO/spacy-ner)](https://hub.docker.com/r/SEU_USUARIO/spacy-ner)
+[![Version](https://img.shields.io/github/v/release/SEU-USUARIO/spacy-ner)](https://github.com/SEU-USUARIO/spacy-ner/releases)
+[![License](https://img.shields.io/github/license/SEU-USUARIO/spacy-ner)](https://github.com/SEU-USUARIO/spacy-ner/blob/main/LICENSE)
+[![Python Version](https://img.shields.io/pypi/pyversions/spacy)](https://pypi.org/project/spacy/)
+[![GitHub issues](https://img.shields.io/github/issues/SEU-USUARIO/spacy-ner)](https://github.com/SEU-USUARIO/spacy-ner/issues)
+[![Last Commit](https://img.shields.io/github/last-commit/SEU-USUARIO/spacy-ner)](https://github.com/SEU-USUARIO/spacy-ner/commits/main)
+
 Este projeto realiza NER (Reconhecimento de Entidades Nomeadas) em códigos fonte, como NodeJS, SQL ou requests cURL. O objetivo é gerar melhorias automáticas na sintaxe e semântica, além de sugestões para documentação.
 
 ## Futurístico e neural:
