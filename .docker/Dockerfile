@@ -10,6 +10,9 @@ RUN pip install --upgrade pip setuptools wheel
 # Instale spaCy com os extras transformers e lookups
 RUN pip install 'spacy[transformers,lookups]'
 
+# Instale as bibliotecas do Hugging Face e PyTorch para rodar o GPT
+RUN pip install torch transformers
+
 # Baixar os modelos de linguagem
 RUN python -m spacy download en_core_web_trf && \
     python -m spacy download pt_core_news_lg
