@@ -1,5 +1,10 @@
 # spacy-ner
 
+Este projeto realiza NER (Reconhecimento de Entidades Nomeadas) em códigos fonte, como NodeJS, SQL ou requests cURL. O objetivo é gerar melhorias automáticas na sintaxe e semântica, além de sugestões para documentação.
+
+## Futurístico e neural:
+![Brain Neural Code](assets/brain.png)
+
 ## Descrição do Projeto
 
 O **spacy-ner** é um projeto que utiliza a combinação de **spaCy** e **GPT-2** para realizar **Reconhecimento de Entidades Nomeadas (NER)** em código-fonte de linguagens como NodeJS, SQL, e requests cURL. O objetivo é analisar esses códigos e sugerir melhorias na sintaxe, semântica, e gerar documentação automaticamente. Este projeto pode ser útil para desenvolvedores que buscam melhorar a qualidade do código, sugerir nomes de variáveis e funções mais apropriados, bem como gerar comentários e documentação de maneira automatizada.
