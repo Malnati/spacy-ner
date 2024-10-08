@@ -26,7 +26,7 @@ O projeto é estruturado em Docker para facilitar a execução e isolamento do a
 ├── src
 │   ├── gpt2_test.py              # Script para teste de NER e GPT-2 com texto
 │   ├── gpt2_test_coding.py       # Script para teste de NER com código-fonte
-│   ├── gtp2_test_sql.py          # Script para NER em código SQL
+│   ├── gtp2_test_curl.py         # Script para NER em requests cURL
 │   └── hugging_face_test.py      # Script para geração de sugestões com GPT-2
 ├── README.md                     # Documentação do projeto
 └── LICENSE                       # Licença MIT
@@ -86,9 +86,9 @@ Agora, dentro do container, você pode executar os scripts no diretório `/usr/s
     python /usr/src/app/src/gpt2_test_coding.py
     ```
 
-- Para rodar o exemplo de NER em código SQL:
+- Para rodar o exemplo de NER em requests cURL:
     ```bash
-    python /usr/src/app/src/gtp2_test_sql.py
+    python /usr/src/app/src/gtp2_test_curl.py
     ```
 
 - Para gerar sugestões de função com GPT-2:
@@ -112,15 +112,24 @@ O modelo identifica que trata-se de uma **Request cURL** e sugere o seguinte com
 Comentário sugerido: Request para API de criação de usuários.
 ```
 
-### NER em Código SQL
+### NER em Código cURL
 
-O script `gtp2_test_sql.py` realiza o reconhecimento de tabelas e variáveis dentro de uma query SQL. Por exemplo, ao processar a seguinte query:
+O script `gtp2_test_curl.py` realiza o reconhecimento de entidades em requests **cURL**, identificando elementos importantes como variáveis, funções e a própria request cURL. Ele analisa o código e sugere documentação apropriada com base nas entidades identificadas.
 
-```sql
-SELECT * FROM users;
+Por exemplo, ao processar o seguinte request cURL:
+
+```bash
+curl -X POST https://api.example.com/users
 ```
 
-O modelo identificará a tabela `users` e marcará como uma **entidade TABELA**.
+O modelo identificará a request como uma **Request cURL** e pode sugerir a seguinte documentação:
+
+```
+Request cURL identificada: curl -X POST
+Comentário sugerido: Request para API de criação de usuários.
+```
+
+Este processo facilita a geração automática de documentação e comentários, aprimorando a qualidade e clareza do código durante o desenvolvimento e revisões.
 
 ## Licença
 
