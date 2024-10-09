@@ -45,12 +45,14 @@ class DatabaseUpdater:
         return f"Coluna {column_name} sem descrição definida. Por favor, forneça mais detalhes."
 
     def generate_table_comment_with_bart(self, column_comments):
-        # Usa BART para gerar um comentário de tabela com base nos comentários das colunas
-        input_text = " ".join(column_comments)
+        # Estruturar a entrada para o modelo com mais contexto
+        input_text = "Descrição da tabela tb_chart. As colunas incluem: " + "; ".join(column_comments)
         result = self.bart_pipeline(
-            f"Gerar um comentário para a tabela baseada nos campos: {input_text}", 
-            max_length=150, 
-            num_return_sequences=1
+            f"Gerar um comentário detalhado para a tabela com base nas descrições fornecidas: {input_text}", 
+            max_length=300,  
+            max_new_tokens=150,  
+            num_return_sequences=1,
+            truncation=True
         )
         return result[0]['generated_text']
 
