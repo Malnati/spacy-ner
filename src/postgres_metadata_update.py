@@ -38,17 +38,30 @@ class DatabaseUpdater:
         improved_comment = f"{comment} {'; '.join(insights)}"
         return improved_comment
 
+    def generate_default_comment(self, column_name):
+        # Gera uma descrição padrão se o comentário estiver ausente
+        return f"Coluna {column_name} sem descrição definida. Por favor, forneça mais detalhes."
+
+    def generate_table_comment(self, table_name):
+        # Gera uma descrição básica para a tabela
+        return f"Tabela {table_name} contendo informações sobre registros específicos."
+
     def update_comments_in_db(self, connection, schema_info):
         try:
             cursor = connection.cursor()
             for table in schema_info:
                 table_name = table['table_name']
                 print(f"Atualizando comentários para a tabela: {table_name}")
-                
+
+                # Atualizar comentário para a tabela
+                table_comment = self.generate_table_comment(table_name)
+                cursor.execute(f"COMMENT ON TABLE {table_name} IS %s", (table_comment,))
+                print(f"Comentário atualizado para a tabela {table_name}: {table_comment}")
+
                 # Atualizar comentários das colunas
                 for column in table['columns']:
                     column_name = column['column_name']
-                    original_comment = column['column_comment'] or "Sem descrição"
+                    original_comment = column['column_comment'] or self.generate_default_comment(column_name)
                     new_comment = self.analyze_comments(original_comment)
 
                     update_query = f"""
