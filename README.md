@@ -10,14 +10,15 @@
 
 Este projeto realiza NER (Reconhecimento de Entidades Nomeadas) em códigos fonte, como NodeJS, SQL ou requests cURL. O objetivo é gerar melhorias automáticas na sintaxe e semântica, além de sugestões para documentação.
 
-## Futurístico e neural:
-![Brain Neural Code](assets/brain.png)
-
 ## Descrição do Projeto
 
 O **spacy-ner** é um projeto que utiliza a combinação de **spaCy** e **GPT-2** para realizar **Reconhecimento de Entidades Nomeadas (NER)** em código-fonte de linguagens como NodeJS, SQL, e requests cURL. O objetivo é analisar esses códigos e sugerir melhorias na sintaxe, semântica, e gerar documentação automaticamente. Este projeto pode ser útil para desenvolvedores que buscam melhorar a qualidade do código, sugerir nomes de variáveis e funções mais apropriados, bem como gerar comentários e documentação de maneira automatizada.
 
 Ao explorar as capacidades do processamento de linguagem natural (NLP) aplicadas ao código-fonte, o **spacy-ner** visa facilitar a análise, revisão e consumo de código, gerando insights úteis para desenvolvedores e revisores.
+
+## Estudo inicial
+
+[Estudo inicial para decisão sobre que ferramentas, linguagens e tecnologias utilizar.](https://gist.github.com/Malnati/3b409efd45b24314a94d6363b41650fe)
 
 ## Funcionalidades
 
@@ -26,6 +27,10 @@ Ao explorar as capacidades do processamento de linguagem natural (NLP) aplicadas
 - Geração de comentários e documentação a partir de código-fonte.
 - Suporte a múltiplos tipos de código, incluindo NodeJS, SQL e requests cURL.
 - Utilização de modelos de linguagem de última geração como **spaCy** e **GPT-2**.
+
+## Futurístico e neural:
+
+![Brain Neural Code](assets/brain.png)
 
 ## Estrutura do Projeto
 
