@@ -8,8 +8,8 @@ class DatabaseUpdater:
         self.config = config
         self.schema_file = schema_file
         self.nlp = spacy.load("en_core_web_trf")
-        # Configurar o pipeline para LLaMA 2
-        self.llama_pipeline = pipeline("text-generation", model="meta-llama/Llama-2-7b-hf")
+        # Configurar o pipeline para BART
+        self.bart_pipeline = pipeline("text2text-generation", model="facebook/bart-large")
 
     def connect_to_db(self):
         try:
@@ -44,14 +44,13 @@ class DatabaseUpdater:
         # Gera uma descrição padrão se o comentário estiver ausente
         return f"Coluna {column_name} sem descrição definida. Por favor, forneça mais detalhes."
 
-    def generate_table_comment_with_llama(self, column_comments):
-        # Usa LLaMA 2 para gerar um comentário de tabela com base nos comentários das colunas
+    def generate_table_comment_with_bart(self, column_comments):
+        # Usa BART para gerar um comentário de tabela com base nos comentários das colunas
         input_text = " ".join(column_comments)
-        result = self.llama_pipeline(
+        result = self.bart_pipeline(
             f"Gerar um comentário para a tabela baseada nos campos: {input_text}", 
             max_length=150, 
-            max_new_tokens=100, 
-            truncation=True
+            num_return_sequences=1
         )
         return result[0]['generated_text']
 
@@ -80,8 +79,8 @@ class DatabaseUpdater:
                     cursor.execute(update_query, (new_comment,))
                     print(f"Comentário atualizado para {table_name}.{column_name}: {new_comment}")
 
-                # Gerar comentário para a tabela usando LLaMA 2
-                table_comment = self.generate_table_comment_with_llama(column_comments)
+                # Gerar comentário para a tabela usando BART
+                table_comment = self.generate_table_comment_with_bart(column_comments)
                 cursor.execute(f"COMMENT ON TABLE {table_name} IS %s", (table_comment,))
                 print(f"Comentário atualizado para a tabela {table_name}: {table_comment}")
 
