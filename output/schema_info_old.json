@@ -17,7 +17,7 @@
         "character_maximum_length": 2,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": null,
+        "column_comment": "C\u00f3digo do pa\u00eds no formato ISO 3166-1 alfa-2. Exemplo: BR para Brasil.",
         "is_primary_key": false
       },
       {
@@ -26,7 +26,7 @@
         "character_maximum_length": 2,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": null,
+        "column_comment": "C\u00f3digo do estado no formato ISO 3166-2. Exemplo: RJ para Rio de Janeiro.",
         "is_primary_key": false
       },
       {
@@ -35,7 +35,7 @@
         "character_maximum_length": 50,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": null,
+        "column_comment": "Nome da cidade relacionada ao registro.",
         "is_primary_key": false
       },
       {
@@ -44,7 +44,7 @@
         "character_maximum_length": 4000,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": null,
+        "column_comment": "Fonte de pesquisa ou institui\u00e7\u00e3o que forneceu os dados. Pode incluir fontes como OCDE, IAC, UNB, entre outras.",
         "is_primary_key": false
       },
       {
@@ -53,7 +53,7 @@
         "character_maximum_length": null,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": null,
+        "column_comment": "Data referente ao per\u00edodo em que os dados foram registrados.",
         "is_primary_key": false
       },
       {
@@ -62,7 +62,7 @@
         "character_maximum_length": 50,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": null,
+        "column_comment": "R\u00f3tulo que descreve o item pesquisado, como \"fertilizantes\", \"cultura\", etc.",
         "is_primary_key": false
       },
       {
@@ -71,7 +71,7 @@
         "character_maximum_length": null,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": null,
+        "column_comment": "Valor num\u00e9rico associado ao r\u00f3tulo, representando a quantidade ou medida espec\u00edfica.",
         "is_primary_key": false
       },
       {
@@ -80,7 +80,7 @@
         "character_maximum_length": null,
         "is_nullable": "YES",
         "column_default": "CURRENT_TIMESTAMP",
-        "column_comment": null,
+        "column_comment": "Data de cria\u00e7\u00e3o do registro.",
         "is_primary_key": false
       },
       {
@@ -89,7 +89,7 @@
         "character_maximum_length": null,
         "is_nullable": "YES",
         "column_default": "CURRENT_TIMESTAMP",
-        "column_comment": null,
+        "column_comment": "Data de atualiza\u00e7\u00e3o do registro.",
         "is_primary_key": false
       },
       {
@@ -98,7 +98,7 @@
         "character_maximum_length": null,
         "is_nullable": "NO",
         "column_default": "uuid_generate_v4()",
-        "column_comment": null,
+        "column_comment": "Identificador \u00fanico externo de registros desta tabela. Este campo \u00e9 obrigat\u00f3rio.",
         "is_primary_key": false
       },
       {
@@ -107,7 +107,7 @@
         "character_maximum_length": 4000,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "Tipo de an\u00e1lise referente ao registro, como eros\u00e3o, GEE, NH3, NPK, org\u00e2nicas, pesticidas ou polui\u00e7\u00e3o. Reconhecido como ORG: GEE; Reconhecido como ORG: NH3; Reconhecido como ORG: NPK",
+        "column_comment": "Tipo de an\u00e1lise referente ao registro, como eros\u00e3o, GEE, NH3, NPK, org\u00e2nicas, pesticidas ou polui\u00e7\u00e3o.",
         "is_primary_key": false
       }
     ]
