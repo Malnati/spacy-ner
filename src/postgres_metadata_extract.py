@@ -1,11 +1,14 @@
 import psycopg2
 import json
 import os
+from transformers import pipeline
 
 class DbReader:
     def __init__(self, config, schema_path):
         self.config = config
         self.schema_path = schema_path
+        # Inicializa o pipeline do GPT-2 para geração de texto
+        self.gpt2_pipeline = pipeline("text-generation", model="gpt2")
 
     def connect_to_db(self):
         try:
@@ -21,6 +24,12 @@ class DbReader:
         except Exception as error:
             print(f"Error connecting to the database: {error}")
             return None
+
+    def generate_comment_with_gpt2(self, column_info):
+        # Gera um comentário usando GPT-2 com base nas informações da coluna
+        input_text = f"Gerar um comentário para a coluna: {column_info['column_name']} do tipo {column_info['data_type']}"
+        result = self.gpt2_pipeline(input_text, max_length=100, num_return_sequences=1, truncation=True)
+        return result[0]['generated_text']
 
     def get_schema_info(self):
         connection = self.connect_to_db()
@@ -72,20 +81,22 @@ class DbReader:
                 cursor.execute(columns_query, (table_name,))
                 columns = cursor.fetchall()
 
+                column_info_list = []
+                for col in columns:
+                    column_info = {
+                        'column_name': col[0],
+                        'data_type': col[1],
+                        'character_maximum_length': col[2],
+                        'is_nullable': col[3],
+                        'column_default': col[4],
+                        'column_comment': col[5] or self.generate_comment_with_gpt2({'column_name': col[0], 'data_type': col[1]}),
+                        'is_primary_key': col[6]
+                    }
+                    column_info_list.append(column_info)
+
                 schema_info.append({
                     'table_name': table_name,
-                    'columns': [
-                        {
-                            'column_name': col[0],
-                            'data_type': col[1],
-                            'character_maximum_length': col[2],
-                            'is_nullable': col[3],
-                            'column_default': col[4],
-                            'column_comment': col[5],
-                            'is_primary_key': col[6]
-                        }
-                        for col in columns
-                    ]
+                    'columns': column_info_list
                 })
 
             self.save_schema_info_to_file(schema_info)

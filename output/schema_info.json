@@ -8,7 +8,7 @@
         "character_maximum_length": null,
         "is_nullable": "NO",
         "column_default": "nextval('tb_chart_id_seq'::regclass)",
-        "column_comment": "Coluna id sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes. ",
+        "column_comment": "Coluna id sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes.   ",
         "is_primary_key": true
       },
       {
@@ -17,7 +17,7 @@
         "character_maximum_length": 2,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "Coluna country sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes. ",
+        "column_comment": "Coluna country sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes.   ",
         "is_primary_key": false
       },
       {
@@ -26,7 +26,7 @@
         "character_maximum_length": 2,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "Coluna state sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes. ",
+        "column_comment": "Coluna state sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes.   ",
         "is_primary_key": false
       },
       {
@@ -35,7 +35,7 @@
         "character_maximum_length": 50,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "Coluna city sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes. Reconhecido como GPE: Coluna city",
+        "column_comment": "Coluna city sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes. Reconhecido como GPE: Coluna city Reconhecido como GPE: Coluna city; Reconhecido como GPE: Coluna city Reconhecido como GPE: Coluna city; Reconhecido como PERSON: GPE; Reconhecido como GPE: Coluna city; Reconhecido como PERSON: GPE; Reconhecido como GPE: Coluna city; Reconhecido como PERSON: GPE; Reconhecido como GPE: Coluna city",
         "is_primary_key": false
       },
       {
@@ -44,7 +44,7 @@
         "character_maximum_length": 4000,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "Coluna source sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes. ",
+        "column_comment": "Coluna source sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes.   ",
         "is_primary_key": false
       },
       {
@@ -53,7 +53,7 @@
         "character_maximum_length": null,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "Coluna period sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes. ",
+        "column_comment": "Coluna period sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes.   ",
         "is_primary_key": false
       },
       {
@@ -62,7 +62,7 @@
         "character_maximum_length": 50,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "Coluna label sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes. ",
+        "column_comment": "Coluna label sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes.   ",
         "is_primary_key": false
       },
       {
@@ -71,7 +71,7 @@
         "character_maximum_length": null,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "Coluna value sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes. ",
+        "column_comment": "Coluna value sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes.   ",
         "is_primary_key": false
       },
       {
@@ -80,7 +80,7 @@
         "character_maximum_length": null,
         "is_nullable": "YES",
         "column_default": "CURRENT_TIMESTAMP",
-        "column_comment": "Coluna created_at sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes. Reconhecido como ORG: Coluna",
+        "column_comment": "Coluna created_at sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes. Reconhecido como ORG: Coluna Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna",
         "is_primary_key": false
       },
       {
@@ -89,7 +89,7 @@
         "character_maximum_length": null,
         "is_nullable": "YES",
         "column_default": "CURRENT_TIMESTAMP",
-        "column_comment": "Coluna updated_at sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes. Reconhecido como ORG: Coluna",
+        "column_comment": "Coluna updated_at sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes. Reconhecido como ORG: Coluna Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna",
         "is_primary_key": false
       },
       {
@@ -98,7 +98,7 @@
         "character_maximum_length": null,
         "is_nullable": "NO",
         "column_default": "uuid_generate_v4()",
-        "column_comment": "Coluna external_id sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes. ",
+        "column_comment": "Coluna external_id sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes.   ",
         "is_primary_key": false
       },
       {
@@ -107,7 +107,7 @@
         "character_maximum_length": 4000,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "Tipo de an\u00e1lise referente ao registro, como eros\u00e3o, GEE, NH3, NPK, org\u00e2nicas, pesticidas ou polui\u00e7\u00e3o. Reconhecido como ORG: GEE; Reconhecido como ORG: NH3; Reconhecido como ORG: NPK Reconhecido como ORG: GEE; Reconhecido como ORG: NH3; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK",
+        "column_comment": "Tipo de an\u00e1lise referente ao registro, como eros\u00e3o, GEE, NH3, NPK, org\u00e2nicas, pesticidas ou polui\u00e7\u00e3o. Reconhecido como ORG: GEE; Reconhecido como ORG: NH3; Reconhecido como ORG: NPK Reconhecido como ORG: GEE; Reconhecido como ORG: NH3; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK Reconhecido como ORG: GEE; Reconhecido como ORG: NH3; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK Reconhecido como ORG: GEE; Reconhecido como ORG: NH3; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: NH3; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: NPK; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: NH3; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK",
         "is_primary_key": false
       }
     ]
