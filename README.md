@@ -30,7 +30,9 @@ Ao explorar as capacidades do processamento de linguagem natural (NLP) aplicadas
 
 ## Futurístico e neural:
 
-![Brain Neural Code](assets/brain.png)
+<p align="center">
+  <img src="assets/brain.png" alt="Brain Neural Code" width="50%"/>
+</p>
 
 ## Estrutura do Projeto
 
