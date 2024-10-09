@@ -1,0 +1,115 @@
+[
+  {
+    "table_name": "tb_chart",
+    "columns": [
+      {
+        "column_name": "id",
+        "data_type": "integer",
+        "character_maximum_length": null,
+        "is_nullable": "NO",
+        "column_default": "nextval('tb_chart_id_seq'::regclass)",
+        "column_comment": null,
+        "is_primary_key": true
+      },
+      {
+        "column_name": "country",
+        "data_type": "character varying",
+        "character_maximum_length": 2,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "C\u00f3digo do pa\u00eds no formato ISO 3166-1 alfa-2. Exemplo: BR para Brasil.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "state",
+        "data_type": "character varying",
+        "character_maximum_length": 2,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "C\u00f3digo do estado no formato ISO 3166-2. Exemplo: RJ para Rio de Janeiro.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "city",
+        "data_type": "character varying",
+        "character_maximum_length": 50,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Nome da cidade relacionada ao registro.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "source",
+        "data_type": "character varying",
+        "character_maximum_length": 4000,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Fonte de pesquisa ou institui\u00e7\u00e3o que forneceu os dados. Pode incluir fontes como OCDE, IAC, UNB, entre outras.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "period",
+        "data_type": "date",
+        "character_maximum_length": null,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Data referente ao per\u00edodo em que os dados foram registrados.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "label",
+        "data_type": "character varying",
+        "character_maximum_length": 50,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "R\u00f3tulo que descreve o item pesquisado, como \"fertilizantes\", \"cultura\", etc.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "value",
+        "data_type": "integer",
+        "character_maximum_length": null,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Valor num\u00e9rico associado ao r\u00f3tulo, representando a quantidade ou medida espec\u00edfica.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "created_at",
+        "data_type": "timestamp without time zone",
+        "character_maximum_length": null,
+        "is_nullable": "YES",
+        "column_default": "CURRENT_TIMESTAMP",
+        "column_comment": "Data de cria\u00e7\u00e3o do registro.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "updated_at",
+        "data_type": "timestamp without time zone",
+        "character_maximum_length": null,
+        "is_nullable": "YES",
+        "column_default": "CURRENT_TIMESTAMP",
+        "column_comment": "Data de atualiza\u00e7\u00e3o do registro.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "external_id",
+        "data_type": "uuid",
+        "character_maximum_length": null,
+        "is_nullable": "NO",
+        "column_default": "uuid_generate_v4()",
+        "column_comment": "Identificador \u00fanico externo de registros desta tabela. Este campo \u00e9 obrigat\u00f3rio.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "analysis",
+        "data_type": "character varying",
+        "character_maximum_length": 4000,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Tipo de an\u00e1lise referente ao registro, como eros\u00e3o, GEE, NH3, NPK, org\u00e2nicas, pesticidas ou polui\u00e7\u00e3o.",
+        "is_primary_key": false
+      }
+    ]
+  }
+]

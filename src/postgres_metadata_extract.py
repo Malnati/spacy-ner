@@ -109,9 +109,9 @@ class DbReader:
 config = {
     'host': 'localhost',
     'port': 5432,
-    'database': 'nome_do_banco',
-    'user': 'usuario',
-    'password': 'senha'
+    'database': 'postgres',
+    'user': 'postgres',
+    'password': 'postgres'
 }
 
 schema_path = './output'
