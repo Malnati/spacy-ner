@@ -1,12 +1,14 @@
 import json
 import psycopg2
 import spacy
+from transformers import pipeline
 
 class DatabaseUpdater:
     def __init__(self, config, schema_file):
         self.config = config
         self.schema_file = schema_file
         self.nlp = spacy.load("en_core_web_trf")
+        self.gpt2_pipeline = pipeline("text-generation", model="gpt2")
 
     def connect_to_db(self):
         try:
@@ -42,9 +44,11 @@ class DatabaseUpdater:
         # Gera uma descrição padrão se o comentário estiver ausente
         return f"Coluna {column_name} sem descrição definida. Por favor, forneça mais detalhes."
 
-    def generate_table_comment(self, table_name):
-        # Gera uma descrição básica para a tabela
-        return f"Tabela {table_name} contendo informações sobre registros específicos."
+    def generate_table_comment_with_gpt2(self, column_comments):
+        # Usa GPT-2 para gerar um comentário de tabela com base nos comentários das colunas
+        input_text = " ".join(column_comments)
+        result = self.gpt2_pipeline(f"Gerar um comentário para a tabela baseada nos campos: {input_text}", max_length=100)
+        return result[0]['generated_text']
 
     def update_comments_in_db(self, connection, schema_info):
         try:
@@ -53,22 +57,28 @@ class DatabaseUpdater:
                 table_name = table['table_name']
                 print(f"Atualizando comentários para a tabela: {table_name}")
 
-                # Atualizar comentário para a tabela
-                table_comment = self.generate_table_comment(table_name)
-                cursor.execute(f"COMMENT ON TABLE {table_name} IS %s", (table_comment,))
-                print(f"Comentário atualizado para a tabela {table_name}: {table_comment}")
-
+                # Coletar os comentários das colunas para gerar o comentário da tabela
+                column_comments = []
+                
                 # Atualizar comentários das colunas
                 for column in table['columns']:
                     column_name = column['column_name']
                     original_comment = column['column_comment'] or self.generate_default_comment(column_name)
                     new_comment = self.analyze_comments(original_comment)
 
+                    # Adicionar o novo comentário à lista de comentários das colunas
+                    column_comments.append(new_comment)
+
                     update_query = f"""
                         COMMENT ON COLUMN {table_name}.{column_name} IS %s
                     """
                     cursor.execute(update_query, (new_comment,))
                     print(f"Comentário atualizado para {table_name}.{column_name}: {new_comment}")
+
+                # Gerar comentário para a tabela usando GPT-2
+                table_comment = self.generate_table_comment_with_gpt2(column_comments)
+                cursor.execute(f"COMMENT ON TABLE {table_name} IS %s", (table_comment,))
+                print(f"Comentário atualizado para a tabela {table_name}: {table_comment}")
 
             connection.commit()
             print("Comentários atualizados no banco de dados.")
