@@ -1,16 +1,17 @@
 import json
-from transformers import GPTNeoForCausalLM, GPT2Tokenizer, pipeline
+from transformers import GPTNeoForCausalLM, AutoTokenizer, pipeline
 
 def configure_gptneo_pipeline():
-    model_name = "EleutherAI/gpt-neo-1.3B"
-    tokenizer = GPT2Tokenizer.from_pretrained(model_name)
+    model_name = "EleutherAI/gpt-neo-2.7B"
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = GPTNeoForCausalLM.from_pretrained(model_name)
     gptneo_pipeline = pipeline("text-generation", model=model, tokenizer=tokenizer)
     return gptneo_pipeline
 
 def generate_comment_with_gptneo(gptneo_pipeline, column_comments):
     input_text = ". ".join(column_comments)
-    result = gptneo_pipeline(input_text, max_length=300, truncation=True)
+    # Substituição de max_length por max_new_tokens
+    result = gptneo_pipeline(input_text, max_new_tokens=150, truncation=True)
     return result[0]['generated_text']
 
 def process_table_comments(input_file, output_file, gptneo_pipeline):
@@ -28,6 +29,6 @@ def process_table_comments(input_file, output_file, gptneo_pipeline):
 
 if __name__ == "__main__":
     input_file = './output/filtered_schema_info.json'
-    output_file = './output/schema_with_table_comments_gptneo.json'
+    output_file = './output/schema_with_table_comments_gpt_neo.json'
     gptneo_pipeline = configure_gptneo_pipeline()
     process_table_comments(input_file, output_file, gptneo_pipeline)

@@ -1,18 +1,18 @@
 import json
-from transformers import T5Tokenizer, T5ForConditionalGeneration, pipeline
+from transformers import T5ForConditionalGeneration, T5Tokenizer, pipeline
 
 def configure_codet5_pipeline():
-    # Carrega o modelo e o tokenizador CodeT5
-    model = T5ForConditionalGeneration.from_pretrained("Salesforce/codet5-base-multi-sum")
-    tokenizer = T5Tokenizer.from_pretrained("Salesforce/codet5-base-multi-sum")
-    # Configura o pipeline para sumarização
-    codet5_pipeline = pipeline("summarization", model=model, tokenizer=tokenizer)
+    model_name = "Salesforce/codet5-base"
+    tokenizer = T5Tokenizer.from_pretrained(model_name)
+    model = T5ForConditionalGeneration.from_pretrained(model_name)
+    codet5_pipeline = pipeline("text2text-generation", model=model, tokenizer=tokenizer)
     return codet5_pipeline
 
 def generate_comment_with_codet5(codet5_pipeline, column_comments):
     input_text = ". ".join(column_comments)
-    result = codet5_pipeline(input_text, max_length=300, truncation=True)
-    return result[0]['summary_text']
+    # Substituição de max_length por max_new_tokens
+    result = codet5_pipeline(input_text, max_new_tokens=150, truncation=True)
+    return result[0]['generated_text']
 
 def process_table_comments(input_file, output_file, codet5_pipeline):
     with open(input_file, 'r') as f:
