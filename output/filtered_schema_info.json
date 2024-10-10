@@ -3,12 +3,111 @@
     "table_name": "tb_chart",
     "columns": [
       {
+        "column_name": "id",
+        "data_type": "integer",
+        "character_maximum_length": null,
+        "is_nullable": "NO",
+        "column_default": "nextval('tb_chart_id_seq'::regclass)",
+        "column_comment": "Identificador único para o registro. Este campo é a chave primária. Valor padrão: nextval('tb_chart_id_seq'::regclass).",
+        "is_primary_key": true
+      },
+      {
+        "column_name": "country",
+        "data_type": "character varying",
+        "character_maximum_length": 2,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "País associado ao registro.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "state",
+        "data_type": "character varying",
+        "character_maximum_length": 2,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Coluna state armazenando valores do tipo character varying.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "city",
+        "data_type": "character varying",
+        "character_maximum_length": 50,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Nome da cidade associada ao registro.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "source",
+        "data_type": "character varying",
+        "character_maximum_length": 4000,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Coluna source armazenando valores do tipo character varying.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "period",
+        "data_type": "date",
+        "character_maximum_length": null,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Coluna period armazenando valores do tipo date.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "label",
+        "data_type": "character varying",
+        "character_maximum_length": 50,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Coluna label armazenando valores do tipo character varying.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "value",
+        "data_type": "integer",
+        "character_maximum_length": null,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Valor numérico associado ao registro.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "created_at",
+        "data_type": "timestamp without time zone",
+        "character_maximum_length": null,
+        "is_nullable": "YES",
+        "column_default": "CURRENT_TIMESTAMP",
+        "column_comment": "Coluna created_at armazenando valores do tipo timestamp without time zone. Valor padrão: CURRENT_TIMESTAMP.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "updated_at",
+        "data_type": "timestamp without time zone",
+        "character_maximum_length": null,
+        "is_nullable": "YES",
+        "column_default": "CURRENT_TIMESTAMP",
+        "column_comment": "Data e hora associada ao registro. Valor padrão: CURRENT_TIMESTAMP.",
+        "is_primary_key": false
+      },
+      {
+        "column_name": "external_id",
+        "data_type": "uuid",
+        "character_maximum_length": null,
+        "is_nullable": "NO",
+        "column_default": "uuid_generate_v4()",
+        "column_comment": "Identificador relacionado ao registro. Valor padrão: uuid_generate_v4().",
+        "is_primary_key": false
+      },
+      {
         "column_name": "analysis",
         "data_type": "character varying",
         "character_maximum_length": 4000,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "Tipo de an\u00e1lise referente ao registro, como eros\u00e3o, GEE, NH3, NPK, org\u00e2nicas, pesticidas ou polui\u00e7\u00e3o. Reconhecido como ORG: GEE; Reconhecido como ORG: NH3; Reconhecido como ORG: NPK Reconhecido como ORG: GEE; Reconhecido como ORG: NH3; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK Reconhecido como ORG: GEE; Reconhecido como ORG: NH3; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK Reconhecido como ORG: GEE; Reconhecido como ORG: NH3; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: NH3; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: NPK; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: NH3; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK",
+        "column_comment": "Coluna analysis armazenando valores do tipo character varying.",
         "is_primary_key": false
       }
     ]
