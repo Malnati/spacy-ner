@@ -13,6 +13,9 @@ RUN pip install 'spacy[transformers,lookups]'
 # Instale as bibliotecas do Hugging Face e PyTorch para rodar o GPT
 RUN pip install torch transformers
 
+# Instalar bibliotecas adicionais
+RUN pip install psutil datasets protobuf sentencepiece
+
 # Baixar os modelos de linguagem
 RUN python -m spacy download en_core_web_trf && \
     python -m spacy download pt_core_news_lg
