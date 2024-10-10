@@ -10,7 +10,6 @@ def configure_gptj_pipeline():
 
 def generate_comment_with_gptj(gptj_pipeline, column_comments):
     input_text = ". ".join(column_comments)
-    # Substituição de max_length por max_new_tokens
     result = gptj_pipeline(input_text, max_new_tokens=150, truncation=True)
     return result[0]['generated_text']
 
