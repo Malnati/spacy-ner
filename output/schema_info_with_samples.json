@@ -1,0 +1,194 @@
+[
+  {
+    "table_name": "tb_chart",
+    "columns": [
+      {
+        "column_name": "id",
+        "data_type": "integer",
+        "character_maximum_length": null,
+        "is_nullable": "NO",
+        "column_default": "nextval('tb_chart_id_seq'::regclass)",
+        "column_comment": "Coluna id sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes.    ",
+        "is_primary_key": true,
+        "sample_data": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "column_name": "country",
+        "data_type": "character varying",
+        "character_maximum_length": 2,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Coluna country sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes.    ",
+        "is_primary_key": false,
+        "sample_data": [
+          "BR"
+        ]
+      },
+      {
+        "column_name": "state",
+        "data_type": "character varying",
+        "character_maximum_length": 2,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Coluna state sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes.    ",
+        "is_primary_key": false,
+        "sample_data": [
+          "SP",
+          "GO",
+          "MS",
+          "MT",
+          "RS"
+        ]
+      },
+      {
+        "column_name": "city",
+        "data_type": "character varying",
+        "character_maximum_length": 50,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Coluna city sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes. Reconhecido como GPE: Coluna city Reconhecido como GPE: Coluna city; Reconhecido como GPE: Coluna city Reconhecido como GPE: Coluna city; Reconhecido como PERSON: GPE; Reconhecido como GPE: Coluna city; Reconhecido como PERSON: GPE; Reconhecido como GPE: Coluna city; Reconhecido como PERSON: GPE; Reconhecido como GPE: Coluna city Reconhecido como GPE: Coluna city; Reconhecido como PERSON: GPE; Reconhecido como GPE: Coluna city; Reconhecido como PERSON: GPE; Reconhecido como GPE: Coluna city; Reconhecido como PERSON: GPE; Reconhecido como GPE: Coluna city; Reconhecido como PERSON: GPE; Reconhecido como GPE: Coluna city; Reconhecido como PERSON: GPE; Reconhecido como PERSON: GPE; Reconhecido como GPE: Coluna city; Reconhecido como PERSON: GPE; Reconhecido como PERSON: GPE; Reconhecido como GPE: Coluna city; Reconhecido como PERSON: GPE; Reconhecido como PERSON: GPE; Reconhecido como GPE: Coluna city",
+        "is_primary_key": false,
+        "sample_data": [
+          "Rio de Janeiro",
+          "Bras\u00edlia",
+          "S\u00e3o Paulo",
+          "Cuiab\u00e1",
+          "Campo Grande"
+        ]
+      },
+      {
+        "column_name": "source",
+        "data_type": "character varying",
+        "character_maximum_length": 4000,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Coluna source sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes.    ",
+        "is_primary_key": false,
+        "sample_data": [
+          "OCDE",
+          "Lombardi",
+          "IAC",
+          "UNB"
+        ]
+      },
+      {
+        "column_name": "period",
+        "data_type": "date",
+        "character_maximum_length": null,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Coluna period sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes.    ",
+        "is_primary_key": false,
+        "sample_data": [
+          "1993-01-01",
+          "1991-01-01",
+          "1992-01-01",
+          "1990-01-01",
+          "1995-01-01"
+        ]
+      },
+      {
+        "column_name": "label",
+        "data_type": "character varying",
+        "character_maximum_length": 50,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Coluna label sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes.    ",
+        "is_primary_key": false,
+        "sample_data": [
+          "fertilizantes org\u00e2nicos",
+          "outros",
+          "cations",
+          "manejo de esterco",
+          "fungicidas"
+        ]
+      },
+      {
+        "column_name": "value",
+        "data_type": "integer",
+        "character_maximum_length": null,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Coluna value sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes.    ",
+        "is_primary_key": false,
+        "sample_data": [
+          1000,
+          305,
+          1800,
+          370,
+          1300
+        ]
+      },
+      {
+        "column_name": "created_at",
+        "data_type": "timestamp without time zone",
+        "character_maximum_length": null,
+        "is_nullable": "YES",
+        "column_default": "CURRENT_TIMESTAMP",
+        "column_comment": "Coluna created_at sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes. Reconhecido como ORG: Coluna Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna",
+        "is_primary_key": false,
+        "sample_data": [
+          "2024-10-04T18:43:19.003259",
+          "2024-10-04T18:43:19.008429",
+          "2024-10-04T18:43:19.006991",
+          "2024-10-04T18:43:19.005787",
+          "2024-10-04T18:43:19.007704"
+        ]
+      },
+      {
+        "column_name": "updated_at",
+        "data_type": "timestamp without time zone",
+        "character_maximum_length": null,
+        "is_nullable": "YES",
+        "column_default": "CURRENT_TIMESTAMP",
+        "column_comment": "Coluna updated_at sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes. Reconhecido como ORG: Coluna Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: Coluna; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Coluna",
+        "is_primary_key": false,
+        "sample_data": [
+          "2024-10-04T18:43:19.003259",
+          "2024-10-04T18:43:19.008429",
+          "2024-10-04T18:43:19.006991",
+          "2024-10-04T18:43:19.005787",
+          "2024-10-04T18:43:19.007704"
+        ]
+      },
+      {
+        "column_name": "external_id",
+        "data_type": "uuid",
+        "character_maximum_length": null,
+        "is_nullable": "NO",
+        "column_default": "uuid_generate_v4()",
+        "column_comment": "Coluna external_id sem descri\u00e7\u00e3o definida. Por favor, forne\u00e7a mais detalhes.    ",
+        "is_primary_key": false,
+        "sample_data": [
+          "00eb9741-adff-48d2-8d51-c7be7deea64d",
+          "012300c9-c047-48ea-8c14-6194648672ce",
+          "02f3e967-98ba-44a6-a4fc-cc3984934890",
+          "02fb4b85-1fe4-4d23-ba29-230129268391",
+          "03cad545-2659-4583-9575-191bb2808f61"
+        ]
+      },
+      {
+        "column_name": "analysis",
+        "data_type": "character varying",
+        "character_maximum_length": 4000,
+        "is_nullable": "NO",
+        "column_default": null,
+        "column_comment": "Tipo de an\u00e1lise referente ao registro, como eros\u00e3o, GEE, NH3, NPK, org\u00e2nicas, pesticidas ou polui\u00e7\u00e3o. Reconhecido como ORG: GEE; Reconhecido como ORG: NH3; Reconhecido como ORG: NPK Reconhecido como ORG: GEE; Reconhecido como ORG: NH3; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK Reconhecido como ORG: GEE; Reconhecido como ORG: NH3; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK Reconhecido como ORG: GEE; Reconhecido como ORG: NH3; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: NH3; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: NPK; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: NH3; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK Reconhecido como ORG: GEE; Reconhecido como ORG: NH3; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: NH3; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: NPK; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: NH3; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: NPK; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: NH3; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: NH3; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: NPK; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: GEE; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: NH3; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: NPK; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: GEE; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: NPK; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: NH3; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: NH3; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: NPK; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: GEE; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como PERSON: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: NH3; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como PERSON: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como PERSON: Reconhecido; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: ORG; Reconhecido como ORG: NPK",
+        "is_primary_key": false,
+        "sample_data": [
+          "NPK",
+          "GEE",
+          "polui\u00e7\u00e3o",
+          "org\u00e2nicas",
+          "NH3"
+        ]
+      }
+    ]
+  }
+]
