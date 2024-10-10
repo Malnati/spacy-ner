@@ -8,49 +8,38 @@
 [![GitHub issues](https://img.shields.io/github/issues/SEU-USUARIO/spacy-ner)](https://github.com/SEU-USUARIO/spacy-ner/issues)
 [![Last Commit](https://img.shields.io/github/last-commit/SEU-USUARIO/spacy-ner)](https://github.com/SEU-USUARIO/spacy-ner/commits/main)
 
-Este projeto realiza NER (Reconhecimento de Entidades Nomeadas) em códigos fonte, como NodeJS, SQL ou requests cURL. O objetivo é gerar melhorias automáticas na sintaxe e semântica, além de sugestões para documentação.
+Este projeto realiza NER (Reconhecimento de Entidades Nomeadas) em códigos-fonte, como NodeJS, SQL ou requests cURL. O objetivo principal continua sendo a geração automática de sugestões de melhorias na sintaxe, semântica, nomes de variáveis, e documentação. Recentemente, foi adicionada uma nova meta: gerar comentários para colunas e tabelas de bancos de dados a partir de metadados extraídos.
 
 ## Descrição do Projeto
 
-O **spacy-ner** é um projeto que utiliza a combinação de **spaCy** e **GPT-2** para realizar **Reconhecimento de Entidades Nomeadas (NER)** em código-fonte de linguagens como NodeJS, SQL, e requests cURL. O objetivo é analisar esses códigos e sugerir melhorias na sintaxe, semântica, e gerar documentação automaticamente. Este projeto pode ser útil para desenvolvedores que buscam melhorar a qualidade do código, sugerir nomes de variáveis e funções mais apropriados, bem como gerar comentários e documentação de maneira automatizada.
+O **spacy-ner** utiliza a combinação de **spaCy** e **modelos de linguagem** para realizar **Reconhecimento de Entidades Nomeadas (NER)** em código-fonte e bancos de dados. Originalmente voltado para análise de códigos de linguagens como NodeJS, SQL e requests cURL, o projeto agora também foca em:
 
-Ao explorar as capacidades do processamento de linguagem natural (NLP) aplicadas ao código-fonte, o **spacy-ner** visa facilitar a análise, revisão e consumo de código, gerando insights úteis para desenvolvedores e revisores.
-
-## Estudo inicial
-
-[Estudo inicial para decisão sobre que ferramentas, linguagens e tecnologias utilizar.](https://gist.github.com/Malnati/3b409efd45b24314a94d6363b41650fe)
+- **Geração de comentários para tabelas e colunas de bancos de dados**, utilizando metadados como base para explicar o propósito de cada elemento.
 
 ## Funcionalidades
 
 - Reconhecimento de Entidades Nomeadas (NER) em código-fonte.
-- Sugestão automática de nomes de variáveis e funções.
-- Geração de comentários e documentação a partir de código-fonte.
-- Suporte a múltiplos tipos de código, incluindo NodeJS, SQL e requests cURL.
-- Utilização de modelos de linguagem de última geração como **spaCy** e **GPT-2**.
+- Geração de sugestões para nomes de variáveis e funções.
+- Geração de comentários e documentação a partir de código-fonte e metadados de bancos de dados.
+- Suporte a múltiplos tipos de código, incluindo NodeJS, SQL, requests cURL, e bancos de dados Postgres.
+- Implementação de modelos de linguagem modernos, como **CodeBERT**, **FLAN-T5**, **T5**.
 
-## Futurístico e neural:
+## Resultados dos Testes
 
-<p align="center">
-  <img src="assets/brain.png" alt="Brain Neural Code" width="50%"/>
-</p>
+Durante a implementação, foram realizados testes com diferentes modelos de linguagem para gerar comentários explicativos para colunas e tabelas de um banco de dados. A seguir, a comparação dos resultados obtidos para a tabela "tb_chart" com os modelos CodeBERT, FLAN-T5 e T5.
 
-## Estrutura do Projeto
-
-O projeto é estruturado em Docker para facilitar a execução e isolamento do ambiente. Os principais arquivos de interesse estão dentro do diretório `src`, onde você encontrará scripts prontos para realizar a análise de códigos com NER e GPT-2.
-
-```bash
-.
-├── .docker
-│   ├── Dockerfile                # Dockerfile para build da aplicação
-│   └── docker-compose.yaml       # Definição do serviço Docker
-├── src
-│   ├── gpt2_test.py              # Script para teste de NER e GPT-2 com texto
-│   ├── gpt2_test_coding.py       # Script para teste de NER com código-fonte
-│   ├── gtp2_test_curl.py         # Script para NER em requests cURL
-│   └── hugging_face_test.py      # Script para geração de sugestões com GPT-2
-├── README.md                     # Documentação do projeto
-└── LICENSE                       # Licença MIT
+```markdown
+| Modelo    | Comentário Gerado                                                                                                 |
+|-----------|------------------------------------------------------------------------------------------------------------------|
+| CodeBERT  | Identificador único para o registro. País associado ao registro. Coluna state armazenando valores do tipo character varying. Nome da cidade associada ao registro. Coluna source armazenando valores do tipo character varying. Coluna period armazenando valores do tipo date. Coluna label armazenando valores do tipo character varying. Valor numérico associado ao registro. Coluna created_at armazenando valores do tipo timestamp without time zone. Data e hora associada ao registro. Identificador relacionado ao registro. Coluna analysis armazenando valores do tipo character varying. |
+| FLAN-T5   | Nome da cidade associada ao registro. Exemplos de valores: 1993-01-01, 1991-01-01, 1992-01-01. Coluna date armazenando valores do tipo character varying. Exemplos de valores: OCDE, Lombardi, MS. Identificador relacionado ao registro. Exemplos de valores: BR.                                                                                              |
+| T5        | Nome da cidade associada ao registro. Exemplos de valores: 1993-01-01, 1991-01-01, 1992-01-01. Coluna date armazenando valores do tipo character varying. Exemplos de valores: OCDE, Lombardi, MS. Identificador relacionado ao registro. Exemplos de valores: BR.                                                                                              |
 ```
+
+### Análise dos Resultados
+
+1. **CodeBERT**: O modelo forneceu uma descrição abrangente, detalhando cada coluna e seu propósito.
+2. **FLAN-T5 e T5**: Os resultados foram similares e mais concisos, cobrindo algumas colunas e exemplos de valores, mas sem a mesma profundidade do CodeBERT.
 
 ## Como Executar o Projeto
 
@@ -72,7 +61,7 @@ Para construir a imagem Docker do projeto, siga os seguintes passos:
     docker-compose build
     ```
 
-Este comando construirá a imagem com todas as dependências necessárias, incluindo os modelos **spaCy** e **GPT-2**.
+Este comando construirá a imagem com todas as dependências necessárias, incluindo os modelos **spaCy** e os modelos de linguagem utilizados.
 
 ### 2. Executando o Container Docker
 
@@ -96,60 +85,20 @@ Agora, dentro do container, você pode executar os scripts no diretório `/usr/s
 
 #### Executando Scripts
 
-- Para rodar o exemplo de análise de NER com GPT-2:
+- Para gerar comentários de tabelas de banco de dados com CodeBERT:
     ```bash
-    python /usr/src/app/src/gpt2_test.py
+    python /usr/src/app/src/gen_table_comment_codebert.py
     ```
 
-- Para rodar o exemplo de NER em código cURL:
+- Para gerar comentários com FLAN-T5:
     ```bash
-    python /usr/src/app/src/gpt2_test_coding.py
+    python /usr/src/app/src/gen_table_comment_flant5.py
     ```
 
-- Para rodar o exemplo de NER em requests cURL:
+- Para gerar comentários com T5:
     ```bash
-    python /usr/src/app/src/gtp2_test_curl.py
+    python /usr/src/app/src/gen_table_comment_t5.py
     ```
-
-- Para gerar sugestões de função com GPT-2:
-    ```bash
-    python /usr/src/app/src/hugging_face_test.py
-    ```
-
-## Exemplos de Uso
-
-### NER em Código cURL
-
-O script `gpt2_test_coding.py` reconhece requests cURL e sugere documentação relevante para o código. Por exemplo, ao analisar a seguinte linha de código:
-
-```bash
-curl -X POST https://api.example.com/users
-```
-
-O modelo identifica que trata-se de uma **Request cURL** e sugere o seguinte comentário:
-
-```
-Comentário sugerido: Request para API de criação de usuários.
-```
-
-### NER em Código cURL
-
-O script `gtp2_test_curl.py` realiza o reconhecimento de entidades em requests **cURL**, identificando elementos importantes como variáveis, funções e a própria request cURL. Ele analisa o código e sugere documentação apropriada com base nas entidades identificadas.
-
-Por exemplo, ao processar o seguinte request cURL:
-
-```bash
-curl -X POST https://api.example.com/users
-```
-
-O modelo identificará a request como uma **Request cURL** e pode sugerir a seguinte documentação:
-
-```
-Request cURL identificada: curl -X POST
-Comentário sugerido: Request para API de criação de usuários.
-```
-
-Este processo facilita a geração automática de documentação e comentários, aprimorando a qualidade e clareza do código durante o desenvolvimento e revisões.
 
 ## Licença
 
