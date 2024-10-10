@@ -1,11 +1,13 @@
 import json
 from transformers import T5Tokenizer, T5ForConditionalGeneration, pipeline
 
+cache_dir = "/usr/src/app/models"
+
 def configure_flant5_pipeline():
     model_name = "google/flan-t5-base"
-    tokenizer = T5Tokenizer.from_pretrained(model_name)
-    model = T5ForConditionalGeneration.from_pretrained(model_name)
-    flant5_pipeline = pipeline("text2text-generation", model=model, tokenizer=tokenizer)
+    tokenizer = T5Tokenizer.from_pretrained(model_name, cache_dir=cache_dir)
+    model = T5ForConditionalGeneration.from_pretrained(model_name, cache_dir=cache_dir)
+    flant5_pipeline = pipeline("text2text-generation", model=model, tokenizer=tokenizer, cache_dir=cache_dir)
     return flant5_pipeline
 
 def generate_comment_with_flant5(flant5_pipeline, column_comments):

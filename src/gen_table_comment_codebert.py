@@ -1,11 +1,13 @@
 import json
 from transformers import AutoModelForMaskedLM, AutoTokenizer, pipeline
 
+cache_dir = "/usr/src/app/models"
+
 def configure_codebert_pipeline():
     model_name = "microsoft/codebert-base"
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForMaskedLM.from_pretrained(model_name)
-    codebert_pipeline = pipeline("fill-mask", model=model, tokenizer=tokenizer)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, cache_dir=cache_dir)
+    model = AutoModelForMaskedLM.from_pretrained(model_name, cache_dir=cache_dir)
+    codebert_pipeline = pipeline("fill-mask", model=model, tokenizer=tokenizer, cache_dir=cache_dir)
     return codebert_pipeline, tokenizer
 
 def generate_comment_with_codebert(codebert_pipeline, tokenizer, column_comments):

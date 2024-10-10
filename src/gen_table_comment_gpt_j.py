@@ -2,6 +2,8 @@ import json
 import torch 
 from transformers import GPTJForCausalLM, AutoTokenizer, pipeline
 
+cache_dir = "/usr/src/app/models"
+
 def check_system_requirements(model_name):
     # Recommended memory: 24-32 GB GPU VRAM, 32 GB system RAM
     min_vram_gptj = 24 * 1024  # in MB
@@ -24,10 +26,10 @@ def check_system_requirements(model_name):
 def configure_gptj_pipeline():
     model_name = "EleutherAI/gpt-j-6B"
     check_system_requirements(model_name)
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = GPTJForCausalLM.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, cache_dir=cache_dir)
+    model = GPTJForCausalLM.from_pretrained(model_name, cache_dir=cache_dir)
     # Use GPU if available
-    gptj_pipeline = pipeline("text-generation", model=model, tokenizer=tokenizer, device=-1)
+    gptj_pipeline = pipeline("text-generation", model=model, tokenizer=tokenizer, device=-1, cache_dir=cache_dir)
     return gptj_pipeline
 
 def generate_comment_with_gptj(gptj_pipeline, column_comments):

@@ -1,11 +1,13 @@
 import json
 from transformers import T5ForConditionalGeneration, T5Tokenizer, pipeline
 
+cache_dir = "/usr/src/app/models"
+
 def configure_t5_pipeline():
     model_name = "t5-base"
-    tokenizer = T5Tokenizer.from_pretrained(model_name, legacy=False)
-    model = T5ForConditionalGeneration.from_pretrained(model_name)
-    t5_pipeline = pipeline("text2text-generation", model=model, tokenizer=tokenizer)
+    tokenizer = T5Tokenizer.from_pretrained(model_name, legacy=False, cache_dir=cache_dir)
+    model = T5ForConditionalGeneration.from_pretrained(model_name, cache_dir=cache_dir)
+    t5_pipeline = pipeline("text2text-generation", model=model, tokenizer=tokenizer, cache_dir=cache_dir)
     return t5_pipeline
 
 def generate_comment_with_t5(t5_pipeline, column_comments):

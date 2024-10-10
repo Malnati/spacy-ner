@@ -1,12 +1,14 @@
 import json
 from transformers import RobertaTokenizer, T5ForConditionalGeneration, pipeline
 
+cache_dir = "/usr/src/app/models"
+
 def configure_codet5_pipeline():
     # Configura o pipeline para o modelo CodeT5
     model_name = "Salesforce/codet5-base"
-    tokenizer = RobertaTokenizer.from_pretrained(model_name)  # Use RobertaTokenizer aqui
-    model = T5ForConditionalGeneration.from_pretrained(model_name)
-    codet5_pipeline = pipeline("text2text-generation", model=model, tokenizer=tokenizer)
+    tokenizer = RobertaTokenizer.from_pretrained(model_name, cache_dir=cache_dir)
+    model = T5ForConditionalGeneration.from_pretrained(model_name, cache_dir=cache_dir)
+    codet5_pipeline = pipeline("text2text-generation", model=model, tokenizer=tokenizer, cache_dir=cache_dir)
     return codet5_pipeline
 
 def generate_comment_with_codet5(codet5_pipeline, column_comments):

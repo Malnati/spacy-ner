@@ -2,6 +2,8 @@ import json
 import torch
 from transformers import GPTNeoForCausalLM, AutoTokenizer, pipeline
 
+cache_dir = "/usr/src/app/models"
+
 def check_system_requirements(model_name):
     # Recommended memory: 12-16 GB GPU VRAM, 16-32 GB system RAM
     min_vram_gptneo = 12 * 1024  # in MB
@@ -24,9 +26,9 @@ def check_system_requirements(model_name):
 def configure_gptneo_pipeline():
     model_name = "EleutherAI/gpt-neo-2.7B"
     check_system_requirements(model_name)
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = GPTNeoForCausalLM.from_pretrained(model_name)
-    gptneo_pipeline = pipeline("text-generation", model=model, tokenizer=tokenizer)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, cache_dir=cache_dir)
+    model = GPTNeoForCausalLM.from_pretrained(model_name, cache_dir=cache_dir)
+    gptneo_pipeline = pipeline("text-generation", model=model, tokenizer=tokenizer, cache_dir=cache_dir)
     return gptneo_pipeline
 
 def generate_comment_with_gptneo(gptneo_pipeline, column_comments):
