@@ -34,7 +34,7 @@ def process_table_comments(input_file, output_file, codet5_pipeline):
 if __name__ == "__main__":
     # Caminhos dos arquivos de entrada e saída
     input_file = './output/filtered_schema_info.json'
-    output_file = './output/schema_with_table_comments.json'
+    output_file = './output/schema_with_table_comments_codet5.json'
 
     # Configurar o pipeline do CodeT5
     codet5_pipeline = configure_codet5_pipeline()
