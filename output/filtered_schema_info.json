@@ -8,8 +8,15 @@
         "character_maximum_length": null,
         "is_nullable": "NO",
         "column_default": "nextval('tb_chart_id_seq'::regclass)",
-        "column_comment": "Identificador único para o registro. Este campo é a chave primária. Valor padrão: nextval('tb_chart_id_seq'::regclass).",
-        "is_primary_key": true
+        "column_comment": "Identificador único para o registro. Este campo é a chave primária. Valor padrão: nextval('tb_chart_id_seq'::regclass). Exemplos de valores: 1, 2, 3.",
+        "is_primary_key": true,
+        "sample_data": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
       },
       {
         "column_name": "country",
@@ -17,8 +24,11 @@
         "character_maximum_length": 2,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "País associado ao registro.",
-        "is_primary_key": false
+        "column_comment": "País associado ao registro. Exemplos de valores: BR.",
+        "is_primary_key": false,
+        "sample_data": [
+          "BR"
+        ]
       },
       {
         "column_name": "state",
@@ -26,8 +36,15 @@
         "character_maximum_length": 2,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "Coluna state armazenando valores do tipo character varying.",
-        "is_primary_key": false
+        "column_comment": "Coluna state armazenando valores do tipo character varying. Exemplos de valores: SP, GO, MS.",
+        "is_primary_key": false,
+        "sample_data": [
+          "SP",
+          "GO",
+          "MS",
+          "MT",
+          "RS"
+        ]
       },
       {
         "column_name": "city",
@@ -35,8 +52,15 @@
         "character_maximum_length": 50,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "Nome da cidade associada ao registro.",
-        "is_primary_key": false
+        "column_comment": "Nome da cidade associada ao registro. Exemplos de valores: Rio de Janeiro, Brasília, São Paulo.",
+        "is_primary_key": false,
+        "sample_data": [
+          "Rio de Janeiro",
+          "Brasília",
+          "São Paulo",
+          "Cuiabá",
+          "Campo Grande"
+        ]
       },
       {
         "column_name": "source",
@@ -44,8 +68,14 @@
         "character_maximum_length": 4000,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "Coluna source armazenando valores do tipo character varying.",
-        "is_primary_key": false
+        "column_comment": "Coluna source armazenando valores do tipo character varying. Exemplos de valores: OCDE, Lombardi, IAC.",
+        "is_primary_key": false,
+        "sample_data": [
+          "OCDE",
+          "Lombardi",
+          "IAC",
+          "UNB"
+        ]
       },
       {
         "column_name": "period",
@@ -53,8 +83,15 @@
         "character_maximum_length": null,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "Coluna period armazenando valores do tipo date.",
-        "is_primary_key": false
+        "column_comment": "Coluna period armazenando valores do tipo date. Exemplos de valores: 1993-01-01, 1991-01-01, 1992-01-01.",
+        "is_primary_key": false,
+        "sample_data": [
+          "1993-01-01",
+          "1991-01-01",
+          "1992-01-01",
+          "1990-01-01",
+          "1995-01-01"
+        ]
       },
       {
         "column_name": "label",
@@ -62,8 +99,15 @@
         "character_maximum_length": 50,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "Coluna label armazenando valores do tipo character varying.",
-        "is_primary_key": false
+        "column_comment": "Coluna label armazenando valores do tipo character varying. Exemplos de valores: fertilizantes orgânicos, outros, cations.",
+        "is_primary_key": false,
+        "sample_data": [
+          "fertilizantes orgânicos",
+          "outros",
+          "cations",
+          "manejo de esterco",
+          "fungicidas"
+        ]
       },
       {
         "column_name": "value",
@@ -71,8 +115,15 @@
         "character_maximum_length": null,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "Valor numérico associado ao registro.",
-        "is_primary_key": false
+        "column_comment": "Valor numérico associado ao registro. Exemplos de valores: 1000, 305, 1800.",
+        "is_primary_key": false,
+        "sample_data": [
+          1000,
+          305,
+          1800,
+          370,
+          1300
+        ]
       },
       {
         "column_name": "created_at",
@@ -80,8 +131,15 @@
         "character_maximum_length": null,
         "is_nullable": "YES",
         "column_default": "CURRENT_TIMESTAMP",
-        "column_comment": "Coluna created_at armazenando valores do tipo timestamp without time zone. Valor padrão: CURRENT_TIMESTAMP.",
-        "is_primary_key": false
+        "column_comment": "Coluna created_at armazenando valores do tipo timestamp without time zone. Valor padrão: CURRENT_TIMESTAMP. Exemplos de valores: 2024-10-04T18:43:19.003259, 2024-10-04T18:43:19.008429, 2024-10-04T18:43:19.006991.",
+        "is_primary_key": false,
+        "sample_data": [
+          "2024-10-04T18:43:19.003259",
+          "2024-10-04T18:43:19.008429",
+          "2024-10-04T18:43:19.006991",
+          "2024-10-04T18:43:19.005787",
+          "2024-10-04T18:43:19.007704"
+        ]
       },
       {
         "column_name": "updated_at",
@@ -89,8 +147,15 @@
         "character_maximum_length": null,
         "is_nullable": "YES",
         "column_default": "CURRENT_TIMESTAMP",
-        "column_comment": "Data e hora associada ao registro. Valor padrão: CURRENT_TIMESTAMP.",
-        "is_primary_key": false
+        "column_comment": "Data e hora associada ao registro. Valor padrão: CURRENT_TIMESTAMP. Exemplos de valores: 2024-10-04T18:43:19.003259, 2024-10-04T18:43:19.008429, 2024-10-04T18:43:19.006991.",
+        "is_primary_key": false,
+        "sample_data": [
+          "2024-10-04T18:43:19.003259",
+          "2024-10-04T18:43:19.008429",
+          "2024-10-04T18:43:19.006991",
+          "2024-10-04T18:43:19.005787",
+          "2024-10-04T18:43:19.007704"
+        ]
       },
       {
         "column_name": "external_id",
@@ -98,8 +163,15 @@
         "character_maximum_length": null,
         "is_nullable": "NO",
         "column_default": "uuid_generate_v4()",
-        "column_comment": "Identificador relacionado ao registro. Valor padrão: uuid_generate_v4().",
-        "is_primary_key": false
+        "column_comment": "Identificador relacionado ao registro. Valor padrão: uuid_generate_v4(). Exemplos de valores: 00eb9741-adff-48d2-8d51-c7be7deea64d, 012300c9-c047-48ea-8c14-6194648672ce, 02f3e967-98ba-44a6-a4fc-cc3984934890.",
+        "is_primary_key": false,
+        "sample_data": [
+          "00eb9741-adff-48d2-8d51-c7be7deea64d",
+          "012300c9-c047-48ea-8c14-6194648672ce",
+          "02f3e967-98ba-44a6-a4fc-cc3984934890",
+          "02fb4b85-1fe4-4d23-ba29-230129268391",
+          "03cad545-2659-4583-9575-191bb2808f61"
+        ]
       },
       {
         "column_name": "analysis",
@@ -107,8 +179,15 @@
         "character_maximum_length": 4000,
         "is_nullable": "NO",
         "column_default": null,
-        "column_comment": "Coluna analysis armazenando valores do tipo character varying.",
-        "is_primary_key": false
+        "column_comment": "Coluna analysis armazenando valores do tipo character varying. Exemplos de valores: NPK, GEE, poluição.",
+        "is_primary_key": false,
+        "sample_data": [
+          "NPK",
+          "GEE",
+          "poluição",
+          "orgânicas",
+          "NH3"
+        ]
       }
     ]
   }

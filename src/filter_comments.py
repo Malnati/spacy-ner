@@ -1,8 +1,8 @@
 import json
 import re
 
-def generate_contextual_comment(column_name, data_type, is_primary_key, column_default):
-    # Sugere um comentário genérico baseado no nome da coluna, tipo de dados, chave primária e valor padrão
+def generate_contextual_comment(column_name, data_type, is_primary_key, column_default, sample_data):
+    # Sugere um comentário genérico baseado no nome da coluna, tipo de dados, chave primária, valor padrão e amostras
     comment = ""
 
     # Sugestões com base no nome da coluna
@@ -35,6 +35,11 @@ def generate_contextual_comment(column_name, data_type, is_primary_key, column_d
     if column_default:
         comment += f" Valor padrão: {column_default}."
 
+    # Acrescentar informações com base nas amostras
+    if sample_data:
+        sample_str = ', '.join(map(str, sample_data[:3]))  # Mostrar apenas as três primeiras amostras
+        comment += f" Exemplos de valores: {sample_str}."
+
     return comment
 
 def clean_comment(comment):
@@ -50,12 +55,13 @@ def filter_comments(input_file, output_file):
     # Gerar e limpar os comentários
     for table in schema_info:
         for column in table['columns']:
-            # Gerar um comentário baseado nos metadados
+            # Gerar um comentário baseado nos metadados e nas amostras
             column['column_comment'] = generate_contextual_comment(
                 column_name=column['column_name'],
                 data_type=column['data_type'],
                 is_primary_key=column['is_primary_key'],
-                column_default=column['column_default']
+                column_default=column['column_default'],
+                sample_data=column.get('sample_data', [])
             )
 
             # Limpar o comentário gerado
@@ -67,7 +73,7 @@ def filter_comments(input_file, output_file):
     print(f"Filtered schema information saved to {output_file}")
 
 # Caminhos dos arquivos de entrada e saída
-input_file = './output/schema_info.json'
+input_file = './output/schema_info_with_samples.json'
 output_file = './output/filtered_schema_info.json'
 
 filter_comments(input_file, output_file)
