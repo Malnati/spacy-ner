@@ -3,15 +3,16 @@ from transformers import T5ForConditionalGeneration, T5Tokenizer, pipeline
 
 def configure_t5_pipeline():
     model_name = "t5-base"
-    tokenizer = T5Tokenizer.from_pretrained(model_name)
+    # Ajuste para usar o novo comportamento do tokenizer
+    tokenizer = T5Tokenizer.from_pretrained(model_name, legacy=False)
     model = T5ForConditionalGeneration.from_pretrained(model_name)
     t5_pipeline = pipeline("text2text-generation", model=model, tokenizer=tokenizer)
     return t5_pipeline
 
 def generate_comment_with_t5(t5_pipeline, column_comments):
     input_text = ". ".join(column_comments)
-    # Usar max_new_tokens para limitar a quantidade de texto gerado
-    result = t5_pipeline(input_text, max_new_tokens=150, truncation=True)
+    # Usar max_new_tokens para limitar a quantidade de texto gerado e adicionar max_length para truncamento explícito
+    result = t5_pipeline(input_text, max_new_tokens=150, truncation=True, max_length=512)
     return result[0]['generated_text']
 
 def process_table_comments(input_file, output_file, t5_pipeline):
