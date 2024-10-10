@@ -27,7 +27,7 @@ class DbReader:
 
     def generate_comment_with_gpt2(self, column_info):
         # Gera um comentário usando GPT-2 com base nas informações da coluna
-        input_text = f"Gerar um comentário para a coluna: {column_info['column_name']} do tipo {column_info['data_type']}"
+        input_text = f"Gerar um comentário para a coluna: {column_info['column_name']} do tipo {column_info['data_type']}: {column_info['column_comment']}"
         result = self.gpt2_pipeline(input_text, max_length=100, num_return_sequences=1, truncation=True)
         return result[0]['generated_text']
 
