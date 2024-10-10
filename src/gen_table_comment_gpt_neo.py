@@ -1,8 +1,29 @@
 import json
+import torch
 from transformers import GPTNeoForCausalLM, AutoTokenizer, pipeline
+
+def check_system_requirements(model_name):
+    # Recommended memory: 12-16 GB GPU VRAM, 16-32 GB system RAM
+    min_vram_gptneo = 12 * 1024  # in MB
+    min_ram_gptneo = 16 * 1024   # in MB
+
+    # Check if GPU is available
+    if torch.cuda.is_available():
+        total_vram = torch.cuda.get_device_properties(0).total_memory / (1024 * 1024)  # Convert bytes to MB
+        if total_vram < min_vram_gptneo:
+            raise RuntimeError(f"Insufficient GPU memory. Required: {min_vram_gptneo} MB, Available: {total_vram:.2f} MB")
+        print(f"GPU memory check passed. Available VRAM: {total_vram:.2f} MB")
+    else:
+        # Fallback to checking system RAM if GPU is not available
+        import psutil
+        total_ram = psutil.virtual_memory().total / (1024 * 1024)  # Convert bytes to MB
+        if total_ram < min_ram_gptneo:
+            raise RuntimeError(f"Insufficient system memory. Required: {min_ram_gptneo} MB, Available: {total_ram:.2f} MB")
+        print(f"System memory check passed. Available RAM: {total_ram:.2f} MB")
 
 def configure_gptneo_pipeline():
     model_name = "EleutherAI/gpt-neo-2.7B"
+    check_system_requirements(model_name)
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = GPTNeoForCausalLM.from_pretrained(model_name)
     gptneo_pipeline = pipeline("text-generation", model=model, tokenizer=tokenizer)

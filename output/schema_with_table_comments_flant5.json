@@ -190,6 +190,6 @@
         ]
       }
     ],
-    "table_comment": "valores:valores:valores:valores:valores:valores:valores:valores:valores:valores:valores:valores:valores:valores:valores:valores:valores:valores:valores:valores:valores:valores: valores: valores: valores: val"
+    "table_comment": "Identifier nico para o registro. Este campo é a chave primária. Valores padro: nextval('tb_chart_id_seq'::regclass). Exemplos de valores: 1, 2, 3.. Nome da cidade associada ao registro. Exemplos de valores: BR.. Coluna state armazenando valores do tipo character varying. Exemplos de valores: SP, GO, MS.. Coluna source armazenando"
   }
 ]
